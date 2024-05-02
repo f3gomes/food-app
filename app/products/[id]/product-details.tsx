@@ -14,6 +14,7 @@ import {
   calculateProductTotalPrice,
   formatCurrency,
 } from "@/app/_helpers/price";
+import DeliveryInfo from "@/app/_components/delivery-info";
 
 interface ProductDetailsProps {
   product: Prisma.ProductGetPayload<{
@@ -103,39 +104,7 @@ const ProductDetails = ({
 
       {/* DADOS DA ENTREGA */}
       <div className="px-5">
-        <Card className="mt-6 flex justify-around py-3">
-          {/* CUSTO */}
-          <div className="flex flex-col items-center">
-            <div className="flex items-center gap-1 text-muted-foreground">
-              <span className="text-xs">Entrega</span>
-              <BikeIcon size={14} />
-            </div>
-
-            {Number(product.restaurant.deliveryFee) > 0 ? (
-              <p className="text-xs font-semibold">
-                {formatCurrency(Number(product.restaurant.deliveryFee))}
-              </p>
-            ) : (
-              <p className="text-xs font-semibold">Grátis</p>
-            )}
-          </div>
-
-          {/* TEMPO */}
-          <div className="flex flex-col items-center">
-            <div className="flex items-center gap-1 text-muted-foreground">
-              <span className="text-xs">Entrega</span>
-              <TimerIcon size={14} />
-            </div>
-
-            {Number(product.restaurant.deliveryFee) > 0 ? (
-              <p className="text-xs font-semibold">
-                {product.restaurant.deliveryTimeMinutes} min
-              </p>
-            ) : (
-              <p className="text-xs font-semibold">Grátis</p>
-            )}
-          </div>
-        </Card>
+        <DeliveryInfo restaurant={product.restaurant} />
       </div>
 
       <div className="mt-6 space-y-3 px-5">
