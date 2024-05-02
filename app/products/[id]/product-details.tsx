@@ -32,6 +32,7 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
 } from "@/app/_components/ui/alert-dialog";
+
 interface ProductDetailsProps {
   product: Prisma.ProductGetPayload<{
     include: {
@@ -57,7 +58,7 @@ const ProductDetails = ({
   const { addProductToCart, products } = useContext(CartContext);
 
   const addToCart = ({ emptyCart }: { emptyCart?: boolean }) => {
-    addProductToCart(product, quantity);
+    addProductToCart({ product, quantity, emptyCart });
     setIsCartOpen(true);
   };
 
@@ -128,6 +129,7 @@ const ProductDetails = ({
             )}
           </div>
 
+          {/* QUANTIDADE */}
           {/* QUANTIDADE */}
           <div className="flex items-center gap-3 text-center">
             <Button
