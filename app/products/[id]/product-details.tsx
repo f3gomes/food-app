@@ -44,7 +44,7 @@ const ProductDetails = ({
     });
 
   return (
-    <div className="py-5">
+    <div className="relative z-50 mt-[-1.5rem] rounded-tl-3xl rounded-tr-3xl bg-white py-5">
       {/* RESTAURANTE */}
       <div className="flex items-center gap-[0.375rem] px-5">
         <div className="relative h-6 w-6">
@@ -129,7 +129,7 @@ const ProductDetails = ({
 
             {Number(product.restaurant.deliveryFee) > 0 ? (
               <p className="text-xs font-semibold">
-                {Number(product.restaurant.deliveryFee)} min
+                {product.restaurant.deliveryTimeMinutes} min
               </p>
             ) : (
               <p className="text-xs font-semibold">Grátis</p>
@@ -148,6 +148,10 @@ const ProductDetails = ({
       <div className="mt-6 space-y-3">
         <h3 className="px-5 font-semibold">Sucos</h3>
         <ProductList products={complementaryProducts} />
+      </div>
+
+      <div className="mt-6 px-5">
+        <Button className="w-full font-semibold">Adicionar à sacola</Button>
       </div>
     </div>
   );
