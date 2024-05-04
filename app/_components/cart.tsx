@@ -1,5 +1,6 @@
 import { useContext, useState } from "react";
 
+import { toast } from "sonner";
 import { Loader2 } from "lucide-react";
 
 import { useRouter } from "next/navigation";
@@ -73,15 +74,14 @@ const Cart = ({ setIsOpen }: CartProps) => {
 
       clearCart();
       setIsOpen(false);
-      alert("Pedido finalizado com sucesso!");
 
-      // toast("Pedido finalizado com sucesso!", {
-      //   description: "Você pode acompanhá-lo na tela dos seus pedidos.",
-      //   action: {
-      //     label: "Meus Pedidos",
-      //     onClick: () => router.push("/my-orders"),
-      //   },
-      // });
+      toast("Pedido finalizado com sucesso!", {
+        description: "Você pode acompanhá-lo na tela dos seus pedidos.",
+        action: {
+          label: "Meus Pedidos",
+          onClick: () => router.push("/my-orders"),
+        },
+      });
     } catch (error) {
       console.error(error);
     } finally {
