@@ -3,14 +3,13 @@ import { ChevronRightIcon } from "lucide-react";
 import Link from "next/link";
 
 import { db } from "./_lib/prisma";
-import { Header } from "./_components/header";
-
+import Search from "./_components/search";
+import Header from "./_components/header";
 import { Button } from "./_components/ui/button";
 import ProductList from "./_components/product-list";
 import PromoBanner from "./_components/promo-banner";
 import { CategoryList } from "./_components/category-list";
 import RestaurantList from "./_components/restaurant-list";
-import Search from "./_components/search";
 
 const Home = async () => {
   const products = await db.product.findMany({
