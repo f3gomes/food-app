@@ -58,7 +58,7 @@ const ProductDetails = ({
   const { addProductToCart, products } = useContext(CartContext);
 
   const addToCart = ({ emptyCart }: { emptyCart?: boolean }) => {
-    addProductToCart({ product, quantity, emptyCart });
+    addProductToCart({ product: { ...product, quantity }, emptyCart });
     setIsCartOpen(true);
   };
 
@@ -80,6 +80,7 @@ const ProductDetails = ({
 
   const handleIncreaseQuantityClick = () =>
     setQuantity((currentState) => currentState + 1);
+
   const handleDecreaseQuantityClick = () =>
     setQuantity((currentState) => {
       if (currentState === 1) return 1;
@@ -177,7 +178,7 @@ const ProductDetails = ({
             <SheetTitle className="text-left">Sacola</SheetTitle>
           </SheetHeader>
 
-          <Cart />
+          <Cart setIsOpen={setIsCartOpen} />
         </SheetContent>
       </Sheet>
 
