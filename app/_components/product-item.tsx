@@ -29,9 +29,10 @@ const ProductItem = ({ product, className }: ProductItemProps) => {
       <div className="w-full space-y-2">
         <div className="relative aspect-square w-full">
           <Image
-            src={product.imageUrl}
-            alt={product.name}
             fill
+            sizes="100%"
+            alt={product.name}
+            src={product.imageUrl}
             className="rounded-lg object-cover shadow-md"
           />
 

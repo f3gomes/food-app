@@ -18,9 +18,10 @@ const ProductImage = ({ product }: ProductImageProps) => {
   return (
     <div className="relative h-[360px] w-full">
       <Image
-        src={product.imageUrl}
-        alt={product.name}
         fill
+        sizes="100%"
+        alt={product.name}
+        src={product.imageUrl}
         className="object-cover"
       />
 

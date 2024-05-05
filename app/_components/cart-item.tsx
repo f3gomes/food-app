@@ -33,9 +33,10 @@ const CartItem = ({ cartProduct }: CartItemProps) => {
         {/* IMAGEM E INFO */}
         <div className="relative h-20 w-20">
           <Image
-            src={cartProduct.imageUrl}
-            alt={cartProduct.name}
             fill
+            sizes="100%"
+            alt={cartProduct.name}
+            src={cartProduct.imageUrl}
             className="rounded-lg object-cover"
           />
         </div>

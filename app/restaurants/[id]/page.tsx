@@ -79,9 +79,10 @@ const RestaurantPage = async ({ params: { id } }: RestaurantPageProps) => {
         <div className="flex items-center gap-[0.375rem]">
           <div className="relative h-8 w-8">
             <Image
-              src={restaurant.imageUrl}
-              alt={restaurant.name}
               fill
+              sizes="100%"
+              alt={restaurant.name}
+              src={restaurant.imageUrl}
               className="rounded-full object-cover"
             />
           </div>

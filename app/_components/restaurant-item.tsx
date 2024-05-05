@@ -50,11 +50,11 @@ const RestaurantItem = ({
         <div className="relative h-[136px] w-full">
           <Link href={`/restaurants/${restaurant.id}`}>
             <Image
-              src={restaurant.imageUrl}
               fill
               sizes="100%"
-              className="rounded-lg object-cover"
               alt={restaurant.name}
+              src={restaurant.imageUrl}
+              className="rounded-lg object-cover"
             />
           </Link>
 

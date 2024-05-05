@@ -95,9 +95,10 @@ const ProductDetails = ({
         <div className="flex items-center gap-[0.375rem] px-5">
           <div className="relative h-6 w-6">
             <Image
-              src={product.restaurant.imageUrl}
-              alt={product.restaurant.name}
               fill
+              sizes="100%"
+              alt={product.restaurant.name}
+              src={product.restaurant.imageUrl}
               className="rounded-full object-cover"
             />
           </div>

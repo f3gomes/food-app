@@ -39,10 +39,10 @@ const RestaurantImage = ({
   return (
     <div className="relative h-[250px] w-full">
       <Image
-        src={restaurant.imageUrl}
-        alt={restaurant.name}
         fill
         sizes="100%"
+        alt={restaurant.name}
+        src={restaurant.imageUrl}
         className="object-cover"
       />
 
