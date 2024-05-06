@@ -47,9 +47,9 @@ const CartBanner = ({ restaurant }: CartBannerProps) => {
         </div>
         {/* BOTÃO */}
 
-        <Sheet>
-          <Button onClick={() => setIsCartOpen(true)}>Ver sacola</Button>
+        <Button onClick={() => setIsCartOpen(true)}>Ver sacola</Button>
 
+        <Sheet open={isCartOpen} onOpenChange={setIsCartOpen}>
           <SheetContent className="w-[90vw]">
             <SheetHeader>
               <SheetTitle className="text-left">Sacola</SheetTitle>
