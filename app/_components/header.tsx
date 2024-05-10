@@ -23,9 +23,11 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "./ui/sheet";
+import { useRouter } from "next/navigation";
 
 const Header = () => {
   const { data } = useSession();
+  const router = useRouter();
 
   const handleSignOutClick = () => signOut();
   const handleSignInClick = () => signIn();
@@ -101,6 +103,7 @@ const Header = () => {
           <div className="space-y-2">
             <Button
               variant="ghost"
+              onClick={() => router.push("/")}
               className="w-full justify-start space-x-3 rounded-full text-sm font-normal"
             >
               <HomeIcon size={16} />
