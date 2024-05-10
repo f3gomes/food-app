@@ -15,7 +15,7 @@ const Home = async () => {
   const { products, burguersCategory, pizzasCategory } = await fetchProducts();
 
   return (
-    <div className="container px-0">
+    <div className="container px-0 pb-8">
       <Header />
       <div className="px-5 pt-6">
         <Search />

@@ -68,7 +68,7 @@ const RestaurantPage = async ({ params: { id } }: RestaurantPageProps) => {
   });
 
   return (
-    <div>
+    <div className="pb-8">
       <RestaurantImage
         restaurant={restaurant}
         userFavoriteRestaurants={userFavoriteRestaurants}
@@ -112,16 +112,16 @@ const RestaurantPage = async ({ params: { id } }: RestaurantPageProps) => {
         ))}
       </div>
 
-      <div className="mt-6 space-y-4">
+      <div className="mt-6 space-y-4 px-4">
         {/* TODO: mostrar produtos mais pedidos quando implementarmos realização de pedido */}
-        <h2 className="px-5  font-semibold">Mais Pedidos</h2>
+        <h2 className="font-semibold">Mais Pedidos</h2>
         <ProductList products={restaurant.products} />
       </div>
 
       {restaurant.categories.map((category) => (
-        <div className="mt-6 space-y-4" key={category.id}>
+        <div className="mt-6 space-y-4 px-4" key={category.id}>
           {/* TODO: mostrar produtos mais pedidos quando implementarmos realização de pedido */}
-          <h2 className="px-5  font-semibold">{category.name}</h2>
+          <h2 className="font-semibold">{category.name}</h2>
           <ProductList products={category.products} />
         </div>
       ))}
