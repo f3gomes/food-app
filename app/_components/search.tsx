@@ -25,16 +25,18 @@ const Search = () => {
   };
 
   return (
-    <form className="flex gap-2" onSubmit={handleSearchSubmit}>
+    <form
+      className="relative flex items-center gap-2"
+      onSubmit={handleSearchSubmit}
+    >
       <Input
         placeholder="Buscar restaurantes"
-        className="border-none"
+        className="border-none px-10"
         onChange={handleChange}
         value={search}
       />
-      <Button size="icon" type="submit">
-        <SearchIcon size={20} />
-      </Button>
+
+      <SearchIcon size={24} className="absolute left-2 text-red-600" />
     </form>
   );
 };
